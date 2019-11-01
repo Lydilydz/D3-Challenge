@@ -1,0 +1,150 @@
+.iframeContainer {
+  padding: 20px;
+  border: 1px solid #e3e3e3;
+}
+
+/* Sticky Footer rules (https://getbootstrap.com/examples/sticky-footer/) */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+
+body {
+  /* Padding bottom by footer height */
+  font-family: 'Droid Serif', serif;
+  font-size: 12px;
+  padding-bottom: 80px;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%; /* Set the fixed height of the footer here */
+  height: 10px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+  background-color: #ffeaed;
+}
+
+#footer p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Start of hairmetal css to reference */
+/* #hairmetal {
+  border-radius: 8px;
+} */
+
+.chart::before {
+  position: absolute;
+  top: 70px;
+  left: 300px;
+  z-index: -1;
+  display: block;
+  width: 400px;
+  height: 525px;
+  content: "Lydi-Ly ";
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Cigarette_ad_cyclist_1900.jpg/220px-Cigarette_ad_cyclist_1900.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  opacity: 0.3;
+}
+
+.tooltip {
+  position: absolute;
+  width: 135px;
+  height: 60px;
+  padding: 2px;
+  padding-top: 8px;
+  font: 12px sans-serif;
+  color: black;
+  text-align: center;
+  background: 	#4A708B;
+  border: 0;
+  border-radius: 10px;
+}
+
+.axis-text {
+  font-family: sans-serif;
+  font-weight: bold;
+  fill: #A4D3EE;
+  text-anchor: middle;
+}
+
+.active {
+  font-weight: bold;
+  fill: #4A708B; 
+  fill: #A4D3EE;
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+}
+
+.inactive {
+  font-weight: lighter;
+  fill:#A4D3EE;
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+}
+
+.inactive:hover {
+  fill: #db98acde;
+  cursor: pointer;
+}
+
+/* End of sample */
+.head{
+  text-align: center;
+  position: relative;
+
+
+}
+
+header{
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 80px;
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: 72px;
+  margin-bottom: 20px;
+
+}
+
+.subhead{
+  text-transform: uppercase;
+  border-bottom: 2px solid #2f2f2f;
+  border-top: 2px solid #2f2f2f;
+  padding: 12px 0 12px 0;
+
+}
+
+.headline.hl1{
+  font-weight: 700;
+  font-size: 30px;
+  text-transform: uppercase;
+  padding: 10px 0 10px 0;
+
+}
+
+.headline.hl2{
+  font-weight: 400;
+  font-style: italic;
+  font-size: 24px;
+  box-sizing: border-box;
+  padding: 10px 0 10px 0;
+}
+
+
+
+
+
+
+/* holy fuck*/
+
+
+/* The end  */
