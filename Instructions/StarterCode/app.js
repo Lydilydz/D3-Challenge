@@ -93,7 +93,7 @@ function renderCircles(textGroup, newXScale, chosenXaxis) {
 // finish
 
 // function used for updating circles group with new tooltip
-function updateToolTip(chosenXAxis, circlesGroup,textGroup) {
+function updateToolTip(chosenXAxis, circlesGroup, textGroup) {
 
   if (chosenXAxis === "age") {
     var label = "Average Age of smoker:";
@@ -112,7 +112,7 @@ function updateToolTip(chosenXAxis, circlesGroup,textGroup) {
 
   circlesGroup.call(toolTip);
   // test
-  circlesGroup 
+  circlesGroup
 
     // Hover rules
     .on("mouseover", function (d) {
@@ -140,7 +140,7 @@ d3.csv("data.csv").then(function (smokersData, err) {
     data.smokes = +data.smokes;
 
   });
-var sData= smokersData;
+  var sData = smokersData;
   // xLinearScale function above csv import
   var xLinearScale = xScale(smokersData, chosenXAxis);
 
@@ -173,13 +173,13 @@ var sData= smokersData;
     .attr("r", 16)
     .attr("fill", "pink")
     .attr("opacity", ".5");
-// console.log(smokersData)
+  // console.log(smokersData)
 
-   var textGroup= chartGroup.selectAll("text.textC")
+  var textGroup = chartGroup.selectAll("text.textC")
     .data(sData)
     .enter()
     .append("text")
-    .attr("class","textC")
+    .attr("class", "textC")
     .text(d => {
       console.log(d)
       return d.abbr;
@@ -235,7 +235,7 @@ var sData= smokersData;
       // get value of selection
       var value = d3.select(this).attr("value");
       if (value !== chosenXAxis) {
-
+        // #region 
         // replaces chosenXAxis with value
         chosenXAxis = value;
 
@@ -257,7 +257,7 @@ var sData= smokersData;
         circlesGroup = updateToolTip(chosenXAxis, circlesGroup);
 
         textGroup = updateToolTip(chosenXAxis, textGroup);
-
+        // #endregion
         // changes classes to change bold text
         if (chosenXAxis === "age") {
           albumsLabel
@@ -293,26 +293,20 @@ var sData= smokersData;
             .classed("active", true)
             .classed("inactive", false);
         }
-
-
 
         // We need change the location and size of the state texts, too.
-        d3
-          .selectAll(".stateText")
-          .attr("y", function (d) {
-            return yScale(d[abbr]) + 16 / 3;
-          })
-          .attr("x", function (d) {
-            return xScale(d[chosenXAxis]);
-          })
-          .attr("r", 16 / 2);
-
-
+        d3.selectAll(".stateText").each(function() {
+          d3.select(this)
+            .transition()
+            .attr("dx", function (d) {
+              return xScale(d[chosenXaxis]);
+            })
+            .duration(300)
+        });
       }
+
     });
-}).catch(function (error) {
-  console.log(error);
-});
+}).catch(function (error) { console.log(error); });
 
 // 
 // document.querySelector("body > div:nth-child(10)")
